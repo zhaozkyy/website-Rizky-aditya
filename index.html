@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman otomatis
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validasi sederhana (misalnya username dan password harus "admin")
+            if (username === 'admin' && password === 'admin') {
+                window.location.href = 'dashboard.html'; // Arahkan ke halaman dashboard
+            } else {
+                alert('Username atau password salah. Silakan coba lagi.'); // Peringatan jika salah
+            }
+        }
+    </script>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form onsubmit="validateForm(event)">
+        <form action="dashboard.html" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
